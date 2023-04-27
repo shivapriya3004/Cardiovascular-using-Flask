@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+
+  
+</head>
+<body>
+ <div class="login">
+	 <center>
+
+    <form action="{{ url_for('predict')}}"method="post">
+	<table>
+		 	<h1>Cardio Vascular Disease Prediction</h1>
+
+		<tr>
+			<td>
+				Age:
+			</td>
+			<td>
+				<input type="number" name="age" id="age" placeholder="age(in days)" required="required"  />
+			</td>
+		</tr>
+		<br>		
+		<tr>
+			<td>		
+				Gender:
+			</td>
+			<td>
+				<input type="radio" id="male" name="gender" value="2">
+				<label for="male">Male</label>
+				<input type="radio" id="female" name="gender" value="1">
+				<label for="female">Female</label>
+			</td>
+		</tr>
+		<br>
+		<tr>
+			<td>
+				Height:
+			</td>
+			<td>
+				<input type="text" name="height" placeholder="height(in cms)" required="required" />
+			</td>
+		</tr>
+		<br>
+		<tr>
+			<td>
+				Weight:
+			</td>
+			<td>
+				<input type="text" name="weight" placeholder="weight"  required="required" />
+			</td>
+		</tr>
+		<br>
+		<tr>
+			<td>
+				Systolic blood pressure:
+			</td>
+			<td>
+				<input type="text" name="ap_hi" placeholder="Systolic blood pressure" required="required" /><br>
+			</td>
+		<tr>
+		<tr>
+			<td>
+				Diastolic blood pressure:
+			</td>
+			<td>
+				<input type="text" name="ap_lo" placeholder="Diastolic blood pressure " required="required" /><br>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>		
+				Cholesterol:
+			</td>
+			<td>
+				<input type="radio" name="cholesterol" value="1">
+				<label>Normal</label>
+				<input type="radio"  name="cholesterol" value="2">
+				<label>Above Normal</label>
+				<input type="radio"  name="cholesterol" value="3">
+				<label>Well Above Normal</label>
+			</td>
+		</tr>
+		<br>
+		<tr>
+			<td>		
+				Glucose:
+			</td>
+			<td>
+				<input type="radio" name="gluc" value="1">
+				<label>Normal</label>
+				<input type="radio"  name="gluc" value="2">
+				<label>Above Normal</label>
+				<input type="radio"  name="gluc" value="3">
+				<label>Well Above Normal</label>
+			</td>
+		</tr>
+		<br>
+		
+		<tr>
+			<td>		
+				Smoking Habit:
+			</td>
+			<td>
+				<input type="radio" name="smoke" value="1">
+				<label>Yes</label>
+				<input type="radio"  name="smoke" value="0">
+				<label>No</label>
+
+			</td>
+		</tr>		
+		
+		<br>
+		
+		<tr>
+			<td>		
+				Alcohol Habit:
+			</td>
+			<td>
+				<input type="radio" name="alco" value="1">
+				<label>Yes</label>
+				<input type="radio"  name="alco" value="0">
+				<label>No</label>
+
+			</td>
+		</tr>			
+		<br>
+		
+		<tr>
+			<td>		
+				Physical Activity:
+			</td>
+			<td>
+				<input type="radio" name="active" value="1">
+				<label>Yes</label>
+				<input type="radio"  name="active" value="0">
+				<label>No</label>
+
+			</td>
+		</tr>	
+		<br>
+		
+
+		</table>
+		<button type="submit" class="btn btn-primary btn-block btn-large" >Predict</button>
+    </form>
+	</center>
+
+   <br>
+   <br>
+   
+<center>   {{ prediction_text }}</center>
+
+ </div>
+
+
+
+</body>
+</html>
